@@ -42,6 +42,7 @@ class Metric(models.Model):
     )
     source = models.ForeignKey(Source, null=True)
     name = models.CharField(max_length=255)
+    friendly_name = models.CharField(max_length=255, blank=True)
     latest_value = models.FloatField(null=True)
     _previous_counter_value = models.FloatField(null=True)
     last_updated = models.DateTimeField(null=True)

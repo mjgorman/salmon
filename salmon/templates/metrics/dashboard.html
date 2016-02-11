@@ -28,7 +28,11 @@
         {% for metric in metrics %}
           {% if metric.get_value_display != None %}
             <tr class="metric{% if metric.alert_triggered %} error{% endif %}" data-name="{{ metric.name }}">
+                {% if metric.friendly_name %}
+                <td><tt>{{ metric.friendly_name }}</tt></td>
+                {% else %}
                 <td><tt>{{ metric.name }}</tt></td>
+                {% endif %}
                 <td>{% display_result metric %}</td>
                 <td><time class="timeago" title="{{ metric.last_updated.isoformat }}" datetime="{{ metric.last_updated.isoformat }}">{{ metric.last_updated }}</time></td>
             </tr>
