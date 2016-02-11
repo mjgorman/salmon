@@ -35,6 +35,7 @@ class Metric(models.Model):
         ('float', 'Number'),
         ('boolean', 'True/False'),
         ('byte', 'Bytes'),
+        ('kbyte', 'KBytes'),
         ('percentage', 'Percentage'),
         ('second', 'Seconds'),
         ('none','None'),
@@ -101,6 +102,8 @@ class Metric(models.Model):
             return bool(self.latest_value)
         if self.display_as == 'byte':
             return defaultfilters.filesizeformat(self.latest_value)
+        if self.display_as == 'kbyte':
+            return defaultfilters.filesizeformat(self.latest_value * 1024)
         if self.display_as == 'second':
             return time.strftime('%H:%M:%S', time.gmtime(self.latest_value))
         if self.display_as == 'none':
