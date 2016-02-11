@@ -1,1 +1,2 @@
-<span title="{{ metric.latest_value }}">{{ metric.get_value_display }}</span>
+<span title="{{ metric.latest_value }}"><i class="badge alert-{% if metric.alert_triggered %}danger{% else %}success{% endif %}">
+        {{ metric.get_value_display }}</i></span>
