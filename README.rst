@@ -1,18 +1,11 @@
 salmon
 ======
 
-This project is unmaintained
------------------------------
+.. image:: https://secure.travis-ci.org/mjgorman/salmon.png?branch=master
+   :target: http://travis-ci.org/mjgorman/salmon
 
-My need for simple monitoring quickly became a need for more complex monitoring. I'm no longer using Salmon, as such, I'm no longer maintaining it. If you would like to continue developing Salmon, feel free to fork the repo and we can point this to your fork.
-
-....
-
-.. image:: https://secure.travis-ci.org/lincolnloop/salmon.png?branch=master
-   :target: http://travis-ci.org/lincolnloop/salmon
-
-.. image:: https://coveralls.io/repos/lincolnloop/salmon/badge.png?branch=master
-   :target: https://coveralls.io/r/lincolnloop/salmon?branch=master
+.. image:: https://coveralls.io/repos/mjgorman/salmon/badge.png?branch=master
+   :target: https://coveralls.io/r/mjgorman/salmon?branch=master
 
 A simple monitoring system built on top of Django.
 
