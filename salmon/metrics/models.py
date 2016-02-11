@@ -37,6 +37,7 @@ class Metric(models.Model):
         ('byte', 'Bytes'),
         ('percentage', 'Percentage'),
         ('second', 'Seconds'),
+        ('none','None'),
     )
     source = models.ForeignKey(Source, null=True)
     name = models.CharField(max_length=255)
@@ -102,6 +103,8 @@ class Metric(models.Model):
             return defaultfilters.filesizeformat(self.latest_value)
         if self.display_as == 'second':
             return time.strftime('%H:%M:%S', time.gmtime(self.latest_value))
+        if self.display_as == 'none':
+            return None
         return self.latest_value
 
     def time_between_updates(self):
