@@ -18,6 +18,7 @@ setup(
         'gunicorn==18.0',
         'whisper==0.9.10',
         'dj-static==0.0.5',
+        'gevent==1.0.2',
         'pytz',
     ],
     entry_points={
