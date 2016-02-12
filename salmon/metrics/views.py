@@ -78,6 +78,7 @@ def history(request, name):
         js_data = map(lambda x: (x[0] * 1000, x[1]), history)
         graphs.append({
             'name': metric.name,
+            'friendly_name': metric.friendly_name,
             'data': json.dumps(js_data),
             'type': 'float',
         })
