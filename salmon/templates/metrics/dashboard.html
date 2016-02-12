@@ -26,8 +26,8 @@
         </thead>
         <tbody>
         {% for metric in metrics %}
-          {% if metric.get_value_display != None %}
           {% if forloop.first %}<p>Internal Ip: {{ metric.source_ip }}</p>{% endif %}
+          {% if metric.get_value_display != None %}
             <tr class="metric{% if metric.alert_triggered %} error{% endif %}" data-name="{{ metric.name }}">
                 {% if metric.friendly_name %}
                 <td><tt>{{ metric.friendly_name }}</tt></td>
