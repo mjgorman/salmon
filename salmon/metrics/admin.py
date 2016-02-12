@@ -4,7 +4,7 @@ from . import models
 class MetricAdmin(admin.ModelAdmin):
     search_fields = ('name',)
     list_filter = ('source',)
-    list_display = ('name', 'friendly_name','source', 'last_updated', 'value_display',
+    list_display = ('name', 'friendly_name','source', 'source_ip', 'last_updated', 'value_display',
                     'alert_triggered', 'display_as', 'is_counter', 'transform',
                     'alert_operator', 'alert_value')
     list_editable = ('friendly_name', 'display_as', 'is_counter',
