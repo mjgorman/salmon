@@ -21,7 +21,7 @@ configure_app(
         default_settings='salmon.settings.base',
         settings_initializer=generate_settings,
         settings_envvar='SALMON_CONF',
-    )
+    ) # pragma: no cover
 
 # This application object is used by any WSGI server configured to use this
 # file. This includes Django's development server, if the WSGI_APPLICATION
@@ -29,4 +29,4 @@ configure_app(
 from django.core.wsgi import get_wsgi_application
 from dj_static import Cling
 
-application = Cling(get_wsgi_application())
+application = Cling(get_wsgi_application()) # pragma: no cover

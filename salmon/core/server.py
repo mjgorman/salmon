@@ -14,6 +14,7 @@ class SalmonHTTPServer(object):
         self.workers = workers
 
         options = settings.WEB_OPTIONS or {}
+        self.options = options
         gunicorn_args = [
             '--bind={0}:{1}'.format(self.host, self.port),
             '--timeout={0}'.format(options.get('timeout', 30)),
@@ -31,7 +32,7 @@ class SalmonHTTPServer(object):
 
         self.gunicorn_args = gunicorn_args
 
-    def run(self):
+    def run(self): # pragma: no cover
         command = [os.path.join(settings.PYTHON_BIN, 'gunicorn'),
                    'salmon.wsgi:application']
         subprocess.call(command + self.gunicorn_args)
